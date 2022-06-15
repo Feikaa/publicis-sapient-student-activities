@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="c1" style="border:2px solid black" width="400" height="400"></canvas>
+    
+    <script type="text/javascript">
+        let ctx = document.getElementById('c1').getContext('2d');
+        for (var i = 0; i < 8; i++) {
+            ctx.beginPath();
+            ctx.arc(200, 400, 200 - i*25, 0, Math.PI, true);
+            ctx.fillStyle = ["red", "orange", "yellow", "green", "blue", "#4B0082", "#7f00ff", "white"][i % 8];
+            ctx.fill();
+        }
+    </script>
+</body>
+</html>
