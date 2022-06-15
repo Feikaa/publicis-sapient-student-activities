@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Login Form</h2>
+    <form action="index.html" name="login" method="post" onsubmit="return handleSubmit()">
+        First name:
+        <input type="text" name="firstname"/><br>
+        Last name:
+        <input type="text" name="lastname"/><br>
+        Gender:
+        <input type="radio" id="male" name="gender" value="M">
+            <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="F">
+            <label for="female">Female</label><br>
+        Password:
+        <input type="password" name="password" /><br>
+        Confirm Password:
+        <input type="password" name="passconfirm"/><br>
+        Skills:
+        <input type="checkbox" id="C" name="Cskill" value="C">
+            <label for="C">C</label>
+        <input type="checkbox" id="Java" name="Java" value="Java">
+            <label for="Java">Java</label>
+        <input type="checkbox" id="JS" name="JSskill" value="JS">
+            <label for="JS">JS</label><br>
+
+        <input type="submit" value="Register" />
+    </form>
+
+    <script type="text/javascript">
+        function handleSubmit() {
+            let loginForm = document.login;
+            let first = loginForm.firstname;
+            let last = loginForm.lastname;
+            let gender = loginForm.gender;
+            let password = loginForm.password;
+            let confirm = loginForm.passconfirm;
+            let c = loginForm.Cskill;
+            let java = loginForm.Java;
+            let js = loginForm.JSskill;
+            if (first.value.length < 3) {
+                alert("First name is less than 3 characters.")
+                return false;
+            }
+            if (last.value.length < 2) {
+                alert("Last name is less than 2 characters.")
+                return false;
+            }
+            if (gender.value == "") {
+                alert("Gender not selected.")
+                return false;
+            }
+            if (password.value != confirm.value) {
+                alert("Password and confirmation are not the same.")
+                return false;
+            }
+            if (!c.checked && !java.checked && !js.checked) {
+                alert("No skills selected.")
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
