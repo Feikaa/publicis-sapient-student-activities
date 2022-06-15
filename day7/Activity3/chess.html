@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="c1" style="border:2px solid black" width="400" height="400"></canvas>
+    <script type="text/javascript">
+        let ctx = document.getElementById('c1').getContext('2d');
+        for (var i = 0; i < 8; i++) {
+            for (var j = 0; j < 8; j++) {
+                ctx.beginPath();
+                ctx.fillStyle = ["white", "black"][(i + j) % 2];
+                ctx.fillRect(j * 50, i * 50, 50, 50);
+                ctx.closePath();
+            }
+        }
+    </script>
+</body>
+</html>
