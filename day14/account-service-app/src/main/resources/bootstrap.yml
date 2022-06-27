@@ -1,0 +1,5 @@
+# bootstrap.yml/properties are loaded before any property file
+# we can give an instance name here
+spring:
+  application:
+    name: account-service
